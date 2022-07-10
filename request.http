@@ -1,0 +1,20 @@
+POST http://localhost:3001/auth/register
+content-Type: application/json
+
+{
+    "username": "testuser",
+     "password": "123456"
+}
+
+###
+POST http://localhost:3001/auth/login
+content-Type: application/json
+
+{
+    "username": "testuser",
+     "password": "123456"
+}
+
+###
+//get thong tin gio hang tren db
+GET http://localhost:3001/cart/infocart
