@@ -19,7 +19,7 @@ User.hasMany(InfoCart)
 //create table sequelize
 async function createTable() {
     await sequelize.sync(
-        { force: true }
+        // { force: true }
     )
 }
 createTable()

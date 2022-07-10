@@ -18,3 +18,21 @@ content-Type: application/json
 ###
 //get thong tin gio hang tren db
 GET http://localhost:3001/cart/infocart
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc0MTQxOTcsImV4cCI6MTY1NzcxNDE5N30.bEorb0QLDMunKgt8sUCUvSHtPhtyNPiz737yxveNvJ8
+###
+POST http://localhost:3001/cart/producttocart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc0MjI0ODIsImV4cCI6MTY1NzcyMjQ4Mn0.RAci-RSkF8hjRJFgvSoAjBsGsMMsseiAoRWt6W_KP7Y
+Content-Type: application/json
+
+ {
+    
+    "idproduct": "ribs-brisket-and-burnt-ends",
+    "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/79619/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+    "name": "Joe's KC BBQ",
+    "dsc": "Joe's KC Ribs, Brisket & Burnt Ends",
+    "price": "110.99",
+    "rate": "4",
+    "country": "Kansas City, KS",
+    "UserId": 1
+  }

@@ -31,6 +31,10 @@ const InfoCart = sequelize.define('InfoCart', {
     country: {
         type: DataTypes.STRING,
         allowNull: false
+    },
+    quatityproduct: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 
 

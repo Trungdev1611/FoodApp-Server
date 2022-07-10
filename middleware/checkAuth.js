@@ -9,7 +9,9 @@ const checkAuth = (req, res, next) => {
     }
     try {
         const accessTokendecode = jwt.verify(token, process.env.TOKENKEY)
-        console.log(accessTokendecode)
+        console.log('accessToken::::', accessTokendecode)
+        //lay idUser va usernam tu token gui len
+        req.userId = accessTokendecode.idUser
         return next()
     } catch (error) {
         return res.status(401).json({
