@@ -13,12 +13,27 @@ const getCartUser = async (req, res) => {
             data: data
         })
     }
-
-    res.json({
+    let totalprice = data.reduce((prev, current) => {
+        return prev + parseInt(current.quatityproduct) * parseInt(current.price)
+    }, 0)
+    console.log('totalPrice::::', totalprice)
+    res.status(200).json({
         message: "Lay du lieu gio hang tu server ve thanh cong",
-        data: data
+        data: data,
+        totalPrice: totalprice
     })
 }
+
+const getLengthCart = async (req, res) => {
+    let CartData = await InfoCart.findAll()
+    const lengthCart = CartData.length
+    console.log(lengthCart)
+    res.status(200).json({
+        message: 'success',
+        datalength: lengthCart
+    })
+}
+
 
 const postproductCart = async (req, res) => {
     const cartdata = req.body
@@ -62,7 +77,39 @@ const postproductCart = async (req, res) => {
 
 }
 
+const addCounIteminCart = async (req, res) => {
+    const idProductCartUser = req.body.idproduct
+    const count = req.body.count
+    console.log("count::", count)
+    if (idProductCartUser) {
+
+        let productFindDb = await InfoCart.findOne({
+            where: { id: idProductCartUser }
+        })
+        if (productFindDb) {
+            let quatitynew = +productFindDb.quatityproduct + count
+            console.log('quatitinew:::', quatitynew)
+            productFindDb.update({ quatityproduct: quatitynew })
+            await productFindDb.save()
+            return res.status(201).json({
+                message: 'Update success',
+                data: productFindDb
+
+            })
+        }
+        else {
+            return res.status(400).json({
+                message: 'Update failed'
+            })
+        }
+
+
+
+    }
+}
 module.exports = {
     getCartUser,
-    postproductCart
+    postproductCart,
+    getLengthCart,
+    addCounIteminCart
 }

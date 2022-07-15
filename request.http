@@ -19,14 +19,14 @@ content-Type: application/json
 //get thong tin gio hang tren db
 GET http://localhost:3001/cart/infocart
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc0NDIxMDUsImV4cCI6MTY1Nzc0MjEwNX0.Vy4CWZ8rCwVHojK58G0QnuDeDHtkc--c75AAcwwKJuI
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc1NTAxNzksImV4cCI6MTY1Nzg1MDE3OX0._WiWkycssp0DZV1ePl0la0X8pNpd4KoCwRa7v1pVnUA
 ###
 POST http://localhost:3001/cart/producttocart
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc0NDIxMDUsImV4cCI6MTY1Nzc0MjEwNX0.Vy4CWZ8rCwVHojK58G0QnuDeDHtkc--c75AAcwwKJuI
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc1NTAxNzksImV4cCI6MTY1Nzg1MDE3OX0._WiWkycssp0DZV1ePl0la0X8pNpd4KoCwRa7v1pVnUA
 Content-Type: application/json
 
  {
-    
+      
     "idproduct": "ribs-brisket-and-burnt-ends",
     "img": "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/79619/joes-kc-ribs-brisket-and-burnt-ends.6710e994980e485e6441b794717ad6fb.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
     "name": "Joe's KC BBQ",
@@ -36,3 +36,19 @@ Content-Type: application/json
     "country": "Kansas City, KS",
     "quatityproduct": 1
   }
+
+###
+//get length Cart
+GET http://localhost:3001/cart//lengthCart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc3Njc2NjksImV4cCI6MTY1ODA2NzY2OX0.Qn_ff_nIR7Px1lq-CrtfUaqoXNP0HiXA7kzdjGFuJUw
+
+###
+//increment count cart
+POST http://localhost:3001/cart/increment-item-incart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc3Njc2NjksImV4cCI6MTY1ODA2NzY2OX0.Qn_ff_nIR7Px1lq-CrtfUaqoXNP0HiXA7kzdjGFuJUw
+Content-Type: application/json
+
+{
+  "idproduct": "6",
+  "count":1
+}
