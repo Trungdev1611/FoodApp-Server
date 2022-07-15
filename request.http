@@ -19,10 +19,10 @@ content-Type: application/json
 //get thong tin gio hang tren db
 GET http://localhost:3001/cart/infocart
 Content-Type: application/json
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc1NTAxNzksImV4cCI6MTY1Nzg1MDE3OX0._WiWkycssp0DZV1ePl0la0X8pNpd4KoCwRa7v1pVnUA
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk0NjUsImV4cCI6MTY1ODE2OTQ2NX0.kQPNFnj2Cf3wJpT97yIpzdsfK7zjXUBqnc3XjI9l7p8
 ###
 POST http://localhost:3001/cart/producttocart
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc1NTAxNzksImV4cCI6MTY1Nzg1MDE3OX0._WiWkycssp0DZV1ePl0la0X8pNpd4KoCwRa7v1pVnUA
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk0NjUsImV4cCI6MTY1ODE2OTQ2NX0.kQPNFnj2Cf3wJpT97yIpzdsfK7zjXUBqnc3XjI9l7p8
 Content-Type: application/json
 
  {
@@ -40,15 +40,22 @@ Content-Type: application/json
 ###
 //get length Cart
 GET http://localhost:3001/cart//lengthCart
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc3Njc2NjksImV4cCI6MTY1ODA2NzY2OX0.Qn_ff_nIR7Px1lq-CrtfUaqoXNP0HiXA7kzdjGFuJUw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk0NjUsImV4cCI6MTY1ODE2OTQ2NX0.kQPNFnj2Cf3wJpT97yIpzdsfK7zjXUBqnc3XjI9l7p8
 
 ###
 //increment count cart
 POST http://localhost:3001/cart/increment-item-incart
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc3Njc2NjksImV4cCI6MTY1ODA2NzY2OX0.Qn_ff_nIR7Px1lq-CrtfUaqoXNP0HiXA7kzdjGFuJUw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk0NjUsImV4cCI6MTY1ODE2OTQ2NX0.kQPNFnj2Cf3wJpT97yIpzdsfK7zjXUBqnc3XjI9l7p8
 Content-Type: application/json
 
 {
   "idproduct": "6",
   "count":1
 }
+
+//delete item in cart
+###
+DELETE http://localhost:3001/cart/deletecart/26
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk3MTUsImV4cCI6MTY1ODE2OTcxNX0.kzf7N_rqVDJQFwQsZs7e_7DjP4zjGC5C9gMQ2gSTN4E
+Content-Type: application/json
+

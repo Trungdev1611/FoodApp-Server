@@ -25,7 +25,9 @@ const getCartUser = async (req, res) => {
 }
 
 const getLengthCart = async (req, res) => {
-    let CartData = await InfoCart.findAll()
+    let CartData = await InfoCart.findAll(
+        { where: { userId: req.userId } }
+    )
     const lengthCart = CartData.length
     console.log(lengthCart)
     res.status(200).json({
@@ -80,7 +82,7 @@ const postproductCart = async (req, res) => {
 const addCounIteminCart = async (req, res) => {
     const idProductCartUser = req.body.idproduct
     const count = req.body.count
-    console.log("count::", count)
+
     if (idProductCartUser) {
 
         let productFindDb = await InfoCart.findOne({
@@ -107,9 +109,32 @@ const addCounIteminCart = async (req, res) => {
 
     }
 }
+
+const deleteItemCart = async (req, res) => {
+    const idProductCartUser = req.params.id
+    console.log('deletecart')
+    console.log('iDDDDDDDDDDDDDD::::', idProductCartUser)
+    if (idProductCartUser) {
+        let itemdelete = await InfoCart.findOne({ where: { id: idProductCartUser } })
+        await InfoCart.destroy({
+            where: { id: idProductCartUser }
+        })
+        return res.status(200).json({
+            message: 'Delete Success',
+            data: itemdelete
+        })
+    }
+    else {
+        res.status(404).json({
+            message: 'khong co Id nhu vay ton tai hoac chua dang nhap'
+        })
+    }
+}
+
 module.exports = {
     getCartUser,
     postproductCart,
     getLengthCart,
-    addCounIteminCart
+    addCounIteminCart,
+    deleteItemCart
 }

@@ -13,7 +13,8 @@ routeCart.get("/lengthCart", checkAuth, cartUsercontroller.getLengthCart)
 routeCart.post('/producttocart', checkAuth, cartUsercontroller.postproductCart)
 //icrement Item in cart
 routeCart.post('/increment-item-incart', checkAuth, cartUsercontroller.addCounIteminCart)
-
+//deleteItem in cart
+routeCart.delete("/deletecart/:id", checkAuth, cartUsercontroller.deleteItemCart)
 
 
 module.exports = routeCart
