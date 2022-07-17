@@ -39,7 +39,7 @@ Content-Type: application/json
 
 ###
 //get length Cart
-GET http://localhost:3001/cart//lengthCart
+GET http://localhost:3001/cart/lengthCart
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk0NjUsImV4cCI6MTY1ODE2OTQ2NX0.kQPNFnj2Cf3wJpT97yIpzdsfK7zjXUBqnc3XjI9l7p8
 
 ###
@@ -56,6 +56,9 @@ Content-Type: application/json
 //delete item in cart
 ###
 DELETE http://localhost:3001/cart/deletecart/26
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTc4Njk3MTUsImV4cCI6MTY1ODE2OTcxNX0.kzf7N_rqVDJQFwQsZs7e_7DjP4zjGC5C9gMQ2gSTN4E
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
 Content-Type: application/json
-
+###
+DELETE http://localhost:3001/removecart
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
+Content-Type: application/json

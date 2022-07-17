@@ -15,6 +15,7 @@ routeCart.post('/producttocart', checkAuth, cartUsercontroller.postproductCart)
 routeCart.post('/increment-item-incart', checkAuth, cartUsercontroller.addCounIteminCart)
 //deleteItem in cart
 routeCart.delete("/deletecart/:id", checkAuth, cartUsercontroller.deleteItemCart)
-
+//Buy cart => xoa empty cart
+routeCart.delete("/removecart", checkAuth, cartUsercontroller.checkout)
 
 module.exports = routeCart

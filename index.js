@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const User = require('./models/User')
 const InfoCart = require('./models/InfoCart')
+const Comments = require('./models/Comments')
 
 const routerAuth = require('./route/Auth')
 const routeCart = require('./route/CartUser')
@@ -15,7 +16,7 @@ app.use(express.json())
 
 //Association
 User.hasMany(InfoCart)
-
+InfoCart.hasMany(Comments)
 //create table sequelize
 async function createTable() {
     await sequelize.sync(

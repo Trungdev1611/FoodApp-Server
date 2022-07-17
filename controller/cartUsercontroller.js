@@ -59,7 +59,7 @@ const postproductCart = async (req, res) => {
     // neu da ton tai chay cau lenh update
     if (checkExitsUserProduct) {
         //tinh lai so luong san pham
-        let quatitynew = +checkExitsUserProduct.quatityproduct + 1
+        let quatitynew = +checkExitsUserProduct.quatityproduct + cartdata.quatityproduct
         //update
         checkExitsUserProduct.update({ quatityproduct: quatitynew })
         //luu lai vao db
@@ -131,10 +131,19 @@ const deleteItemCart = async (req, res) => {
     }
 }
 
+const checkout = async (req, res) => {
+    console.log('reqUserid:::::', req.userId)
+    await InfoCart.destroy({ where: { userId: req.userId } })
+    return res.status(200).json({
+        message: "checkout success"
+    })
+}
+
 module.exports = {
     getCartUser,
     postproductCart,
     getLengthCart,
     addCounIteminCart,
-    deleteItemCart
+    deleteItemCart,
+    checkout
 }
