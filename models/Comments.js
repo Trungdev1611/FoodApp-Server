@@ -7,10 +7,17 @@ const Comments = sequelize.define('comments', {
         type: DataTypes.STRING,
         allowNull: false
     },
-
+    username: {
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     likes: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    idfooditem: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 
 

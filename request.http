@@ -59,6 +59,19 @@ DELETE http://localhost:3001/cart/deletecart/26
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
 Content-Type: application/json
 ###
-DELETE http://localhost:3001/removecart
+// remove item in cart user
+DELETE http://localhost:3001/cart/removecart
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
 Content-Type: application/json
+
+###
+//post comments
+post http://localhost:3001/comments/postcomment
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
+Content-Type: application/json
+
+{
+  "content": "testcommentpost",
+  "idfooditem": "aaabbbb",
+  "username": "testuser"
+}

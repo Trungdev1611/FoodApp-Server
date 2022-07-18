@@ -27,6 +27,7 @@ const checkAuth = (req, res, next) => {
         console.log('accessToken::::', accessTokendecode)
         //lay idUser va usernam tu token gui len
         req.userId = accessTokendecode.idUser
+        req.username = accessTokendecode.username
         return next()
     } catch (error) {
         return res.status(401).json({
