@@ -75,3 +75,28 @@ Content-Type: application/json
   "idfooditem": "aaabbbb",
   "username": "testuser"
 }
+###
+//get comments
+GET  http://localhost:3001/comments/getcomments/bo-ssam-dinner-for-4-6
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
+Content-Type: application/json
+###
+//checklike
+GET http://localhost:3001/likes/checklike/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgwMjE0MzUsImV4cCI6MTY1ODMyMTQzNX0.IxaOMmgLaTSqHBY_EuibTkW538_s5LMhVaQ5kpVP6tc
+Content-Type: application/json
+
+//get totallike in comment
+###
+GET http://localhost:3001/likes/getTotallike/2
+
+###
+//post comment reply
+POST http://localhost:3001/reply/replycomment
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjEsInVzZXJuYW1lIjoidGVzdHVzZXIiLCJpYXQiOjE2NTgzMDEzMzgsImV4cCI6MTY1ODYwMTMzOH0._0RA7tUJjfPJLF65o2FyySpx8RV2urJEnMB38N_zeZw
+Content-Type: application/json
+
+{
+  "contentReply": "This is a reply comment second",
+  "commentId": "3"
+}

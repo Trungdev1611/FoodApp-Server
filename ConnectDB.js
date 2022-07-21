@@ -1,7 +1,11 @@
 const Sequelize = require('sequelize')
 const sequelize = new Sequelize('food_app', 'root', '', {
     host: 'localhost',
-    dialect: 'mysql'
+    dialect: 'mysql',
+    "dialectOptions": {
+        "useUTC": true
+    },
+    "timezone": "+07:00"
 });
 
 let checkconnect = async () => {

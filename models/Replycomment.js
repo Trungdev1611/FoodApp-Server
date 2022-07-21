@@ -1,21 +1,18 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('./../ConnectDB')
 
-const Comments = sequelize.define('comments', {
+const Replycomment = sequelize.define('Replycomment', {
     // Model attributes are defined here
-    content: {
+    contentReply: {
         type: DataTypes.STRING,
         allowNull: false
     },
-    username: {
+    usernameReply: {
         type: DataTypes.STRING,
         allowNull: false
     },
 
-    idfooditem: {
-        type: DataTypes.STRING,
-        allowNull: false
-    },
+
 
 
 
@@ -24,4 +21,4 @@ const Comments = sequelize.define('comments', {
     // Other model options go here
 });
 
-module.exports = Comments
+module.exports = Replycomment

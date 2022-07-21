@@ -39,7 +39,7 @@ const getLengthCart = async (req, res) => {
 
 const postproductCart = async (req, res) => {
     const cartdata = req.body
-
+    console.log('cartData:::', cartdata)
     if (!cartdata) {
         return res.json({
             error: "khong co body"

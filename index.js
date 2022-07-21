@@ -3,10 +3,14 @@ const app = express()
 const User = require('./models/User')
 const InfoCart = require('./models/InfoCart')
 const Comments = require('./models/Comments')
+const Likes = require('./models/Likes')
+const Replycomment = require('./models/Replycomment')
 
 const routerAuth = require('./route/Auth')
 const routeCart = require('./route/CartUser')
 const routeComments = require('./route/CommentsRouter')
+const routeLike = require('./route/Likeroute')
+const replyroute = require('./route/ReplyCommentroute')
 
 const cors = require('cors');
 const sequelize = require('./ConnectDB');
@@ -18,6 +22,10 @@ app.use(express.json())
 //Association
 User.hasMany(InfoCart)
 // InfoCart.hasMany(Comments)
+Comments.hasMany(Likes)
+Comments.hasMany(Replycomment)
+
+
 //create table sequelize
 async function createTable() {
     await sequelize.sync(
@@ -34,6 +42,8 @@ app.use(express.json());
 app.use('/auth', routerAuth)
 app.use('/cart', routeCart)
 app.use('/comments', routeComments)
+app.use('/likes', routeLike)
+app.use('/reply', replyroute)
 
 app.listen(port, (req, res) => {
     console.log(`server dang chay tren http://localhost:${port}`)
