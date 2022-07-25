@@ -6,13 +6,13 @@ const register = async (req, res) => {
     const { username, password } = req.body
     if (!(username && password)) {
         return res.status(400).json({
-            error: 'Username or Password khong hop le'
+            error: 'Incorrect Username or password'
         })
     }
     let checkuser = await User.findOne({ where: { username: username } })
     if (checkuser) {
         return res.status(409).json({
-            error: 'Username da ton tai trong he thong'
+            error: 'Username already exits'
         })
     }
     await User.create({ username: username, password: password })
@@ -26,7 +26,7 @@ const login = async (req, res) => {
     if (!username && !password) {
         return res.status(400).json({
             error: 'Error',
-            message: 'UserName hoac password khong hop le'
+            message: "The username was incorrect. Please try again"
         })
     }
 
@@ -35,14 +35,14 @@ const login = async (req, res) => {
         if (!user) {
             return res.status(400).json({
                 error: 'Username',
-                message: "User chua ton tai trong he thong. Vui long dang ky"
+                message: "The username was incorrect. Please try again or create an account"
 
             })
         }
         if (password !== user.password) {
             return res.status(400).json({
                 error: 'Password',
-                message: "Mat khau khong dung voi tai khoan. Kiem tra lai"
+                message: "The password was incorrect. Please try again"
             })
         }
         const accessToken = jwt.sign({ idUser: user.id, username: user.username }, process.env.TOKENKEY, { expiresIn: 5 * 60 * 1000 })

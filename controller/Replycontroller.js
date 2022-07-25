@@ -9,7 +9,7 @@ const postReply = async (req, res) => {
         //postData: {contentReply: xxx, username:xxx, commentId: xxx}
         //tao du lieu trong database
         console.log('PostData::', postData)
-        let dataCreate = await Replycomment.create(postData)
+        let dataCreate = await Replycomment.create(postData)  //{contentReply: xxx, username:xxx, commentId: xxx, id:xxx, createAt:xxx, updateAt: xxx}
         return res.status(201).json({
             msg: 'Post reply comment success',
             data: dataCreate

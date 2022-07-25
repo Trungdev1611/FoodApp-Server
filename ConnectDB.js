@@ -3,7 +3,7 @@ const sequelize = new Sequelize('food_app', 'root', '', {
     host: 'localhost',
     dialect: 'mysql',
     "dialectOptions": {
-        "useUTC": true
+        "useUTC": false
     },
     "timezone": "+07:00"
 });
