@@ -16,7 +16,7 @@ const cors = require('cors');
 const sequelize = require('./ConnectDB');
 require('dotenv').config()
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || PORT || 80 || 3001
 app.use(express.json())
 
 //Association
